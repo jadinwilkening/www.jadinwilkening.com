@@ -56,20 +56,17 @@ nav{
 .logo{
     width: 240px;
 }
-
 nav ul li{
     display: inline-block;
     list-style: none;
     margin: 10px 20px;
 }
-
 nav ul li a{
     color: #fff;
     text-decoration:none;
     font-size: 28px;
     position: relative;
 }
-
 nav ul li a::after{
 content: '';
 width: 0%;
@@ -80,17 +77,42 @@ left: 0;
 bottom: -6px;
 transition: 0.5s;
 }
-
 nav ul li a:hover::after{
     width: 100%;
 }
-
+/*Pop up disclaimer message */
+#popup-message {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(222, 209, 209, 0.307);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    z-index: 1000;
+    font-family: Arial, sans-serif;
+    font-size: 21px;
+}
+#popup-message button {
+    background-color: #f44;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+}
 .header-text{
-    margin-top: 20%;
+    margin-top: 10%;
     font-size: 30px;
 }
 h1{
     font-size: 60px;
+    text-align: left;
 }
 .others-header-text{
     font-size: 60px;
@@ -99,7 +121,6 @@ h1{
     font-size: 60px;
     margin-top: 20px;
 }
-
 .header-text h1 span{
     color: #007BFF;
 }
@@ -253,7 +274,7 @@ h1{
     flex-direction: column;
     padding: 0 40px;
     text-align: left;
-    font-size: 15px;
+    font-size: 18px;
     transition: height 0.5s;
 }
 .layer h3{
@@ -331,8 +352,27 @@ h1{
     transform: translateY(-5px);
 }
 .btn.btn2{
-    display: inline-block;
+    margin-bottom: 10% ;
+    margin-top: 2%;
+    margin-right: 4%;
     background: #007BFF;
+}
+.spinner {
+    display: none;
+    width: 50px;
+    height: 50px;
+    border: 6px solid #ccc;
+    border-top: 6px solid #1d72b8;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 .contact-right form{
     width: 100%;
@@ -433,8 +473,11 @@ nav .fas{
     ------------*/
 #msg{
     color: 007BFF;
-    margin-top: -40px;
+    margin-top: -80px;
     display: block;
+    font-size: 16pt;
+    text-align: left;
+    background-color: #007BFF;
 }
 main-content{
     min-height:100vh ;

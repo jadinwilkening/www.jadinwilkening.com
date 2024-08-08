@@ -4,7 +4,7 @@
         <meta charset = "UTF-8">
         <meta http-equiv="X-UA-Compatible" content=" IE=edge">
         <meta name = "viewpoint" content ="width=device-width, initial-sc ale=1.0">
-        <title>Jadin Wilkening's Personal Website</title>
+        <title>Jadin Wilkening's Website</title>
         <link rel="stylesheet" href="style.css">
         <script src="https://kit.fontawesome.com/b607d9895c.js" crossorigin="anonymous"></script>
 </head>
@@ -15,7 +15,7 @@
             <img src="pics/JW Logo Design.png" class="logo">
             <ul id="sidemenu">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="bio.html">Bio</a></li>
+                <!--<li><a href="bio.html">Bio & Blog</a></li>-->
                 <li><a href="resume.html">Resume</a></li>
                 <!--<li><a href="projects.html">Projects</a></li>
                 <li><a href="inspirations.html">Inspirations</a></li>
@@ -27,6 +27,16 @@
             <!---------- struggling with the small screen html features     
             <i class="fa-solid fa-bars" onclick="openmenu()"></i>    -->
         </nav>
+        <!--Adding in a section to display a popup disclaimer message-->
+        <div id="popup-message">
+            <p>Thanks for stopping by jadinwilkening.com!<br>
+            <br>This site is a work in progress as I continue to learn and improve. I appreciate your patience and understanding as I continue to enhance this page each day.<br>
+            <br>If you have any feedback, feel free to let me know!</p>
+            <button onclick="closePopup()">Close</button>
+        </div>
+    
+        <script src="scripts.js"></script>
+
         <div class="header-text">
           <!-- Might add a job title later  <p>Web Developer</p> -->
             <h1>Hey, I'm <span>Jadin W</span><br> from Colorado!</h1>
@@ -45,9 +55,11 @@
             </div>
             <div class="about-col-2">
                 <h1 class="sub-title">About Me</h1>
-                <br><p>Hello, I'm Jadin! I'm a recent college graduate with a passion for blending technical skills and creative artistry through different medias. During my time as a NASA Disasters Program Intern, I got to enhance web applications with HTML, CSS, and JavaScript, and bring data to life with MySQL. I love crafting user-friendly digital experiences that are both beautiful and functional.
+                <br><p>Hello, I'm Jadin Wilkening! A storyteller at heart and a tech enthusiast by trade, I thrive at the intersection of creativity and technology. I'm passionate about crafting digital experiences that are as beautiful as they are functional, and I'm always looking for new ways to bring ideas to life.
 
-                    <br><br>I've also enjoyed taking on leadership roles, like organizing events at Randolph College and managing teams for NASA projects. These experiences have helped me grow as a leader, collaborator, and innovator. I'm excited to dive into new challenges and opportunities in the tech world, and I look forward to bringing my unique mix of creativity and technical know-how to every project.
+                    <br><br>Currently, I'm on the lookout for opportunities where I can blend my creative vision with technical expertise. Alongside my professional pursuits, I'm training to run a marathon by the end of the year, a journey that has taught me the importance of dedication, resilience, and striving for greatness.
+                    
+                    <br><br>I'm excited to dive into new challenges and contribute to projects that are both innovative and impactful. Let's create something amazing together!
                 </p><br><br>
 
                 <div class="tab-titles">
@@ -146,7 +158,9 @@
             <div class="layer">
                 <h3>STEM to Screen: <br> Exploring the Math and Science Behind Pixar's RenderMan</h3>
                 <p><br><br>For my senior thesis, I delved into the transformative impact of mathematics and sciences on computer-generated animation, focusing on Pixar’s RenderMan software. Driven by my passion for the intersection of art and technology, 
-                    I spent seven weeks meticulously researching and preparing this project. I examined techniques in set design, lighting, crowd simulations, 3D modeling, and hair simulations, uncovering how mathematical principles and artistic creativity converge in animation.
+                    I spent seven weeks meticulously researching and preparing this project. 
+                    
+                    <br><br>I examined techniques in set design, lighting, crowd simulations, 3D modeling, and hair simulations, uncovering how mathematical principles and artistic creativity converge in animation.
                     This research culminated in both an essay and a presentation, which I was honored to present at the Symposium of Artists and Scholars at Randolph College in April 2024.</p>
                 <a href="https://drive.google.com/file/d/1hcOnBJPm8DzK_xiJg6b8cZF6_H8tLyKQ/view?usp=sharing"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
             </div>
@@ -156,9 +170,9 @@
             <img src="pics/FDC Duality Pose.jpg">
             <div class="layer">
                 <h3>Rhythms of Renewal: <br> A Student Produced Dance Concert</h3>
-                <p>As President of The Dance Group at Randolph College, I took the lead in revitalizing our cherished student-produced fall dance concert. Faced with the challenge of organizing and producing a collegiate-level dance performance independently, I passionately rallied a group to bring forth an evening that celebrates the themes of community, rebirth, and reconnection. 
+                <p>As President of The Dance Group at Randolph College, I played a key role in revitalizing our cherished student-produced fall dance concert. Working alongside a dedicated team, we faced the challenge of organizing and producing a collegiate-level dance performance. Together, we passionately brought forth an evening that celebrated the themes of community, rebirth, and reconnection.
 
-                    <br><br>I invite you to join us for a transformative experience, where artistry meets resilience in a celebration of unity. This performance was a testament to our unwavering commitment to the arts and our community, showcasing the profound impact of collaborative effort and artistic expression.</p>
+                <br><br>I invite you to join us for a transformative experience, where artistry meets resilience in a celebration of unity. This performance is a testament to our unwavering commitment to the arts and our community, showcasing the profound impact of collaborative effort and artistic expression.</p>
                 <a href="https://drive.google.com/file/d/1aIFrjYBA9STAyVbB8Sd0lpn72Be6n6-9/view?usp=sharing"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
             </div>
         </div>
@@ -184,12 +198,15 @@
                 </div>
             </div>
             <div class="contact-right">
-                <form name="submit-to-google-sheet">
-                    <input type="text" name="Name" placeholder="Enter your name here" required>
-                    <input type="email" name="Email" placeholder="Enter your email here" required>
-                    <textarea name="Message" rows="6" placeholder="Please enter your message here"></textarea>
+            <script src="script.js"></script>
+                <form id="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Please enter your first and last name here" required>
+                    <input type="email" name="Email" placeholder="Please enter a valid email here" required>
+                    <textarea name="Message" rows="6" placeholder="Please enter your message here" required></textarea>
                     <button type="submit" class="btn btn2">Submit</button>
                 </form>
+                <div class="spinner" id="spinner"></div>
+                <script src="script.js"></script>
                 <span id="msg"></span>
             </div>
         </div>
@@ -232,7 +249,7 @@
     }
 </script>
 <script>
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbxpQt6dgUggSDDQZBJriD8qzGiKw3gGXLtq_UDHoJI8aEIl6lqpsLhJnhpFYRRxcY7fUA/exec'
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwPX01964cPPDcq7h5KiuIlE87TuwpCnG3T-VDoyzY2LSHL8Mcc45ZLJ0iFxOjZ8Dw_xw/exec'
     const form = document.forms['submit-to-google-sheet']
     const msg = document.getElementById("msg")
   
@@ -240,10 +257,10 @@
       e.preventDefault()
       fetch(scriptURL, { method: 'POST', body: new FormData(form)})
         .then(response => {
-            msg.innerHTML = "Message sent successfully"
+            msg.innerHTML = "Thank you! Your message has been sent successfully"
             setTimeout(function(){
                 msg.innerHTML = ""
-            }, 5000)
+            }, 6000)            
             form.reset()
         })
         .catch(error => console.error('Error!', error.message))
