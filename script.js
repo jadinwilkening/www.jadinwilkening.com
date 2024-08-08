@@ -7,11 +7,16 @@ function showPopup() {
 
 function closePopup() {
   document.getElementById('popup-message').style.display = 'none';
+  // Store in localStorage to remember the user has seen the popup
+  localStorage.setItem('popupShown', 'true');
 }
 
-// Show the popup message after a short delay
 window.onload = function() {
-  setTimeout(showPopup, 1000); // Adjust the delay as needed
+  // Check if the popup has already been shown
+  if (!localStorage.getItem('popupShown')) {
+      // Show the popup message after a short delay
+      setTimeout(showPopup, 1000); // Adjust the delay as needed
+  }
 };
 document.getElementById('submit-to-google-sheet').addEventListener('submit', function(e) {
     e.preventDefault();
